@@ -14,13 +14,13 @@ pipeline {
 
     stage('Test') {
       steps { 
-          sh 'go test ../.'
+          sh 'go test'
       }   
     }   
 
     stage ('Release') {
       when {
-          branch 'main'
+          branch 'master'
         //buildingTag()
       }   
 
