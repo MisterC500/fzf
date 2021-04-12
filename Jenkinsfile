@@ -20,10 +20,10 @@ pipeline {
     }   
 
     stage ('Release') {
-      when {
+      /*when {
           branch 'master'
           buildingTag()
-      }   
+      }*/   
 
       steps {
           sh 'goreleaser release'
