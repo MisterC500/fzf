@@ -26,7 +26,7 @@ pipeline {
       }   
 
       steps {
-          sh 'curl -sL https://git.io/goreleaser | bash'
+          sh 'goreleaser release
         }   
     }   
   }
