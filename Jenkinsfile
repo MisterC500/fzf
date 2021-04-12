@@ -1,8 +1,9 @@
 pipeline {
   agent any 
   environment{
-      GOPATH="/working_dir/go/bin"
-      PATH="${GOPATH}:$PATH"
+      //GOPATH="/working_dir/go/bin"
+      PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
+      GITHUB_TOKEN = credentials('GH_token')
   }
   stages {
     stage('Compile') {
@@ -21,17 +22,12 @@ pipeline {
     stage ('Release') {
       when {
           branch 'master'
-        //buildingTag()
+          buildingTag()
       }   
-
-      /*environment {
-        GITHUB_TOKEN = credentials('github-token')
-      }*/
 
       steps {
-        //sh 'curl -sL https://git.io/goreleaser | bash'
-        echo 'Release stage...'
-      }   
+          sh 'curl -sL https://git.io/goreleaser | bash'
+        }   
     }   
   }
 }
