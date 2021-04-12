@@ -22,7 +22,7 @@ pipeline {
     stage ('Release') {
       when {
           branch 'master'
-          //buildingTag()
+          buildingTag()
       }   
 
       steps {
