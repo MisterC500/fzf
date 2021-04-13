@@ -22,7 +22,7 @@ pipeline {
     stage ('Release') {
       when {
           branch 'master'
-          tag "v*.*.*"
+          tag "v0.33.0"
       }  
 
       steps {
