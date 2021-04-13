@@ -21,7 +21,7 @@ pipeline {
 
     stage ('Release') {
       when {
-          tag("release-v0.29.0")
+          tag("release-v0.30.0")
       }  
 
       steps {
