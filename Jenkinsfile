@@ -21,12 +21,11 @@ pipeline {
 
     stage ('Release') {
       when {
-          branch 'master'
-          tag "v0.33.0"
+          buildingTag()
       }  
 
       steps {
-          sh 'goreleaser release'
+          sh 'goreleaser release --rm -dist'
         }   
     }   
   }
