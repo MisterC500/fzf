@@ -25,7 +25,7 @@ pipeline {
       }  
 
       steps {
-          sh 'goreleaser release --rm-dist'
+          sh 'goreleaser release --rm-dist' 
         }   
     }   
   }
