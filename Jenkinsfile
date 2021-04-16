@@ -4,7 +4,7 @@ pipeline {
       //GOPATH="/working_dir/go/bin"
       PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin"
       GITHUB_TOKEN = credentials('GH_token')
-  }
+  } 
   stages {
     stage('Compile') {
       steps {
